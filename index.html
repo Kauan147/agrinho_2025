@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paraná Sabor: Da Terra à Mesa</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Paraná Sabor: Da Terra à Mesa</h1>
+            <p>Conectando o campo e a cidade, um prato de cada vez.</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="introducao" class="hero">
+            <div class="container">
+                <h2>A Jornada do Alimento no Coração do Brasil</h2>
+                <p>Do solo fértil paranaense até a sua mesa, cada alimento percorre um longo caminho. Mas você sabe como essa jornada acontece? Prepare-se para descobrir os segredos da nossa produção, a dedicação dos nossos agricultores e a tecnologia que impulsiona a alimentação nas cidades.</p>
+            </div>
+        </section>
+
+        <section id="producao-parana" class="content-section">
+            <div class="container">
+                <h2>O Celeiro do Brasil: A Força do Paraná</h2>
+                <p>O Paraná se destaca como um dos maiores produtores de alimentos do Brasil. Nossos campos são responsáveis por uma vasta gama de produtos que chegam a lares por todo o país e até no exterior. Mas quais são os protagonistas dessa produção?</p>
+                <div class="data-grid">
+                    <div class="data-item">
+                        <h3>Soja: A Rainha dos Campos</h3>
+                        <p>Responsável por <strong>mais de 30% da produção nacional</strong>, a soja paranaense é um gigante agrícola.</p>
+                        <div class="chart-container">
+                            <canvas id="sojaChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="data-item">
+                        <h3>Milho: Versatilidade e Abundância</h3>
+                        <p>Fundamental para a alimentação humana e animal, o milho do Paraná representa uma fatia significativa da colheita brasileira.</p>
+                        <div class="chart-container">
+                            <canvas id="milhoChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="data-item">
+                        <h3>Aves: Liderança na Produção</h3>
+                        <p>O Paraná é o <strong>maior produtor e exportador de carne de frango do Brasil</strong>. Nossas granjas abastecem milhões de pessoas!</p>
+                        <div class="chart-container">
+                            <canvas id="avesChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <p class="source-info"><em>Dados baseados em estimativas de produção agrícola do estado do Paraná (IBGE/SEAB).</em></p>
+            </div>
+        </section>
+
+        <section id="caminhos-logistica" class="content-section alternate-bg">
+            <div class="container">
+                <h2>Os Caminhos do Alimento: Do Campo à Cidade</h2>
+                <p>Após a colheita ou produção, os alimentos precisam chegar aos centros urbanos. Essa jornada envolve uma complexa rede de logística, garantindo que tudo chegue fresco e em perfeitas condições.</p>
+                <ul>
+                    <li><strong>Transporte:</strong> Caminhões são os principais veículos para levar os produtos das fazendas para cooperativas, indústrias e centros de distribuição.</li>
+                    <li><strong>Armazenamento:</strong> Silos e armazéns refrigerados são cruciais para manter a qualidade dos alimentos antes da distribuição.</li>
+                    <li><strong>Processamento:</strong> Muitas vezes, os alimentos passam por indústrias para serem transformados (ex: trigo em farinha, leite em laticínios).</li>
+                    <li><strong>Comercialização:</strong> Supermercados, feiras, restaurantes e delivery são os pontos de chegada para o consumidor final.</li>
+                </ul>
+                <div class="image-grid">
+                    <img src="https://via.placeholder.com/400x250/a8c67c/ffffff?text=Caminhões+do+Paraná" alt="Caminhões transportando alimentos no Paraná">
+                    <img src="https://via.placeholder.com/400x250/7cb342/ffffff?text=Silos+de+Grãos" alt="Silos de grãos no campo">
+                    <img src="https://via.placeholder.com/400x250/4CAF50/ffffff?text=Feira+Livre" alt="Feira livre na cidade">
+                </div>
+            </div>
+        </section>
+
+        <section id="tecnologia-futuro" class="content-section">
+            <div class="container">
+                <h2>Tecnologia e Inovação no Campo e na Cidade</h2>
+                <p>A tecnologia tem um papel fundamental em otimizar todo o processo, desde a produção até a mesa. Drones monitoram lavouras, sensores controlam a irrigação e aplicativos conectam produtores a consumidores.</p>
+                <div class="chart-container full-width-chart">
+                    <canvas id="inovacaoChart"></canvas>
+                </div>
+                <p><em>Investimento em tecnologia no agronegócio paranaense tem crescido, impulsionando a eficiência e a sustentabilidade.</em></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Paraná Sabor. Todos os direitos reservados. Projeto feito com carinho para celebrar a conexão campo-cidade.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Dados para os gráficos (exemplos didáticos)
+        const sojaData = {
+            labels: ['Paraná', 'Demais Estados'],
+            datasets: [{
+                data: [35, 65], // Exemplo: 35% da produção nacional do Paraná
+                backgroundColor: ['#7CAF50', '#a8c67c'],
+                hoverOffset: 4
+            }]
+        };
+
+        const milhoData = {
+            labels: ['Paraná', 'Demais Estados'],
+            datasets: [{
+                data: [20, 80], // Exemplo: 20% da produção nacional do Paraná
+                backgroundColor: ['#FFC107', '#FFD54F'],
+                hoverOffset: 4
+            }]
+        };
+
+        const avesData = {
+            labels: ['Paraná', 'Demais Estados'],
+            datasets: [{
+                data: [40, 60], // Exemplo: 40% da produção nacional de aves do Paraná
+                backgroundColor: ['#FF7043', '#FF9800'],
+                hoverOffset: 4
+            }]
+        };
+
+        const inovacaoData = {
+            labels: ['Agricultura de Precisão', 'Logística Inteligente', 'Comércio Eletrônico', 'Outros'],
+            datasets: [{
+                label: 'Adoção de Tecnologia no Agronegócio (%)',
+                data: [30, 25, 20, 25],
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.6)',
+                    'rgba(153, 102, 255, 0.6)',
+                    'rgba(255, 159, 64, 0.6)',
+                    'rgba(255, 99, 132, 0.6)'
+                ],
+                borderColor: [
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 99, 132, 1)'
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        // Configurações e renderização dos gráficos
+        const configPie = {
+            type: 'pie',
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed !== null) {
+                                    label += context.parsed + '%';
+                                }
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        const configBar = {
+            type: 'bar',
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false,
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Percentual de Adoção (%)'
+                        }
+                    }
+                }
+            }
+        };
+
+        new Chart(document.getElementById('sojaChart'), { ...configPie, data: sojaData });
+        new Chart(document.getElementById('milhoChart'), { ...configPie, data: milhoData });
+        new Chart(document.getElementById('avesChart'), { ...configPie, data: avesData });
+        new Chart(document.getElementById('inovacaoChart'), { ...configBar, data: inovacaoData });
+    </script>
+</body>
+</html>
